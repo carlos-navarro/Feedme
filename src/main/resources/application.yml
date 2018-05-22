@@ -1,0 +1,9 @@
+dataprovider:
+    host: localhost
+    port: 8282
+
+
+spring.data.mongodb:
+    database: events
+    host: localhost
+    port: 27017
