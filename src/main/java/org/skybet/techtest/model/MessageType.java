@@ -16,6 +16,28 @@ public enum MessageType {
             return new EventMessage(Integer.parseInt(data.get(0)), data.get(1), data.get(2), Long.parseLong(data.get(3)),
                     data.get(4), data.get(5), data.get(6), data.get(7), Long.parseLong(data.get(8)), Boolean.parseBoolean(data.get(9)), Boolean.parseBoolean(data.get(10)));
         }
+        /*
+        @Override
+        public Event event(Message message) {
+            return Optional.ofNullable(message)
+                        .map(m -> (EventMessage) m)
+                        .map(map((EventMessage) m))
+                        .orElseGet(() -> {
+                            log.warn("Event can't be saved for messageId:{}", message.getMsgId());
+                            return null;
+                        });
+        }
+            
+        @Override
+        public Event map(EventMessage message) {
+            return new Event(
+                message.getEventId(), message.getCategory(),
+                message.getSubCategory(), message.getName(),
+                message.getStartTime(), message.getDisplayed(),
+                message.getSuspended(), Collections.emptyList());
+        }
+        */
+            
     }, MARKET {
         @Override
         public Message toMessage(List<String> data) {
