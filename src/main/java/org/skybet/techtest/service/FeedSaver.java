@@ -32,6 +32,10 @@ public class FeedSaver {
 
 
     public void save(Message message) {
+        /*
+        MessageType type = MessageType.parse(message.getType());
+        save(type.event())
+        */
 
         switch (MessageType.parse(message.getType())) {
 
